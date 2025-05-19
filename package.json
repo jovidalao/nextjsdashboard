@@ -3,7 +3,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bcrypt'), 'node_modules/bcrypt', 'junction') } catch (e) { if (e.code !== 'EEXIST') throw e }\""
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
